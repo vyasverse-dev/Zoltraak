@@ -10,21 +10,6 @@ import InsipiredLegends from "../InspiredLegends/InsipiredLegends";
 import Pricing from "../Pricing/Pricing";
 import ExamplesSection from "../examples/Example";
 
-const metadata = {
-  title: "MonoLab UI - A minimal layer for your codebase",
-  description:
-    "A set of clean , accessible components that live in your codebase.",
-  keywords: [
-    "monolab ui",
-    "react components",
-    "component library",
-    "ui components",
-    "design system",
-    "nextjs components",
-  ],
-  author: "Monolab ui",
-};
-
 export function Hero() {
   return (
     <main className="bg-background">

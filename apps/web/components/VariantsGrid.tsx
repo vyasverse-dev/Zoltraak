@@ -88,7 +88,7 @@ function VariantCell({
     <div
       className={`
         group relative flex min-h-32 items-center justify-center p-8
-        m-1 border border-border/30
+        m-1 border border-border/50
         rounded-xl
       `}
     >

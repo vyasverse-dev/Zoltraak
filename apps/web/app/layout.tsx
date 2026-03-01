@@ -14,7 +14,7 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: "MonoLab UI",
-  description: "A minimal layer for your codebase",
+  description: "A focused set of clean, accessible components that live in your codebase. Copy what you need, shape it to your product, and keep every line under your control.",
   keywords: [
     "monolab ui",
     "react components",
