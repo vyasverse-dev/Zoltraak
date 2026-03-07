@@ -3,15 +3,15 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Coins } from "lucide-react";
-import { FormCard } from "@repo/ui/form";
+import { FormButton, FormCard } from "@repo/ui/form";
 import { useAppStore } from "@/lib/store";
 import { cn } from "@/lib/utils";
-
-const XP_PER_LEVEL = 100;
 
 export default function ZoltraakDashboard() {
   const { currentTheme, cycleTheme, player } = useAppStore();
   const [showFlash, setShowFlash] = useState(false);
+
+  console.log("Current Theme is:", currentTheme);
 
   useEffect(() => {
     setShowFlash(true);
@@ -19,7 +19,7 @@ export default function ZoltraakDashboard() {
     return () => clearTimeout(t);
   }, [currentTheme]);
 
-  const xpProgress = Math.min(1, player.xp / XP_PER_LEVEL);
+  const xpWidth = Math.max(0, Math.min(player.xp, 100));
 
   return (
     <div className="relative min-h-dvh w-full overflow-hidden bg-background px-4 py-8 md:px-6 md:py-10">
@@ -37,22 +37,23 @@ export default function ZoltraakDashboard() {
         )}
       </AnimatePresence>
 
-      {/* Floating WARP REALITY button */}
-      <motion.button
-        type="button"
-        onClick={() => cycleTheme()}
-        className={cn(
-          "fixed bottom-6 right-6 z-50 rounded-xl px-5 py-3 text-sm font-semibold",
-          "border border-primary/40 bg-primary text-primary-foreground",
-          "shadow-[0_0_24px_var(--primary),0_0_48px_var(--primary)/40]",
-          "transition-shadow hover:shadow-[0_0_32px_var(--primary),0_0_64px_var(--primary)/50]",
-          "focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
-        )}
+      {/* Floating WARP REALITY button – uses MonoLab FormButton so it inherits design tokens */}
+      <motion.div
+        className="fixed bottom-6 right-6 z-50"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.98 }}
       >
-        WARP REALITY
-      </motion.button>
+        <FormButton
+          type="button"
+          onClick={() => cycleTheme()}
+          className={cn(
+            "px-5 py-3 text-sm font-semibold shadow-[0_0_24px_var(--primary),0_0_48px_var(--primary)/40]",
+            "hover:shadow-[0_0_32px_var(--primary),0_0_64px_var(--primary)/50]"
+          )}
+        >
+          WARP REALITY
+        </FormButton>
+      </motion.div>
 
       {/* Bento Grid with scale pulse on theme change */}
       <motion.div
@@ -100,16 +101,14 @@ export default function ZoltraakDashboard() {
               <div className="w-full max-w-[220px]">
                 <div className="mb-1 flex justify-between text-xs text-muted-foreground">
                   <span>XP</span>
-                  <span>
-                    {player.xp} / {XP_PER_LEVEL}
-                  </span>
+                  <span>{player.xp}%</span>
                 </div>
                 <div className="h-2 w-full overflow-hidden rounded-full bg-muted">
                   <motion.div
                     className="h-full rounded-full"
                     style={{ backgroundColor: "var(--primary)" }}
                     initial={false}
-                    animate={{ width: `${xpProgress * 100}%` }}
+                    animate={{ width: `${xpWidth}%` }}
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   />
                 </div>

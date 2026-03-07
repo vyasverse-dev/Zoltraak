@@ -6,9 +6,19 @@
 
 [data-theme="zenith"] {
   /* Bright, neutral baseline */
-  --primary: oklch(0.205 0 0);
   --background: oklch(1 0 0);
+  --color-background: var(--background);
+
+  /* Force a vivid primary to verify overrides */
+  --primary: #8b5cf6 !important;
+  --color-primary: var(--primary);
+
   --card: oklch(0.97 0 0);
+  --color-card: var(--card);
+
+  --border: oklch(0.92 0 0);
+  --color-border: var(--border);
+
   --radius: 0.625rem;
 
   /* Convenience aliases for experiments */
@@ -18,9 +28,18 @@
 
 [data-theme="cyberpunk"] {
   /* Neon on deep space */
-  --primary: oklch(0.7 0.25 325);
   --background: oklch(0.18 0.08 280);
+  --color-background: var(--background);
+
+  --primary: oklch(0.7 0.25 325);
+  --color-primary: var(--primary);
+
   --card: oklch(0.24 0.09 300);
+  --color-card: var(--card);
+
+  --border: oklch(0.4 0.12 290);
+  --color-border: var(--border);
+
   --radius: 1rem;
 
   --bg: var(--background);
@@ -29,9 +48,18 @@
 
 [data-theme="medieval"] {
   /* Warm parchment + steel */
-  --primary: oklch(0.55 0.12 95);
   --background: oklch(0.96 0.03 95);
+  --color-background: var(--background);
+
+  --primary: oklch(0.55 0.12 95);
+  --color-primary: var(--primary);
+
   --card: oklch(0.9 0.04 80);
+  --color-card: var(--card);
+
+  --border: oklch(0.78 0.05 80);
+  --color-border: var(--border);
+
   --radius: 0.5rem;
 
   --bg: var(--background);
@@ -40,9 +68,18 @@
 
 [data-theme="anime"] {
   /* Pastel energy */
-  --primary: oklch(0.78 0.18 45);
   --background: oklch(0.98 0.05 95);
+  --color-background: var(--background);
+
+  --primary: oklch(0.78 0.18 45);
+  --color-primary: var(--primary);
+
   --card: oklch(0.98 0.08 55);
+  --color-card: var(--card);
+
+  --border: oklch(0.9 0.04 80);
+  --color-border: var(--border);
+
   --radius: 1.25rem;
 
   --bg: var(--background);
