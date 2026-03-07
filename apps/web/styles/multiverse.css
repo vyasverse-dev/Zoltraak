@@ -1,0 +1,51 @@
+/* Zoltraak Multiverse theme tokens
+ *
+ * Each data-theme variant overrides the core MonoLab design tokens.
+ * These values intentionally push contrast + mood so differences are obvious.
+ */
+
+[data-theme="zenith"] {
+  /* Bright, neutral baseline */
+  --primary: oklch(0.205 0 0);
+  --background: oklch(1 0 0);
+  --card: oklch(0.97 0 0);
+  --radius: 0.625rem;
+
+  /* Convenience aliases for experiments */
+  --bg: var(--background);
+  --card-bg: var(--card);
+}
+
+[data-theme="cyberpunk"] {
+  /* Neon on deep space */
+  --primary: oklch(0.7 0.25 325);
+  --background: oklch(0.18 0.08 280);
+  --card: oklch(0.24 0.09 300);
+  --radius: 1rem;
+
+  --bg: var(--background);
+  --card-bg: var(--card);
+}
+
+[data-theme="medieval"] {
+  /* Warm parchment + steel */
+  --primary: oklch(0.55 0.12 95);
+  --background: oklch(0.96 0.03 95);
+  --card: oklch(0.9 0.04 80);
+  --radius: 0.5rem;
+
+  --bg: var(--background);
+  --card-bg: var(--card);
+}
+
+[data-theme="anime"] {
+  /* Pastel energy */
+  --primary: oklch(0.78 0.18 45);
+  --background: oklch(0.98 0.05 95);
+  --card: oklch(0.98 0.08 55);
+  --radius: 1.25rem;
+
+  --bg: var(--background);
+  --card-bg: var(--card);
+}
+
