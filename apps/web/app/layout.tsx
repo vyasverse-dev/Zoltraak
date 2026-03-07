@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
+import "../styles/multiverse.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { MultiverseThemeSync } from "@/components/multiverse-theme-sync";
 // import { PostHogProvider } from "./providers";
 import { Analytics } from "@vercel/analytics/next";
 import { Navbar } from "@/components/Navbar";
@@ -32,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
+    <html lang="en" className="dark" data-theme="zenith" suppressHydrationWarning>
       <body>
         <ThemeProvider
           attribute="class"
@@ -40,6 +42,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <MultiverseThemeSync />
           {/* <PostHogProvider>{children}</PostHogProvider> */}
           <Navbar />
           {children}
