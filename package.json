@@ -1,5 +1,5 @@
 {
-  "name": "monolabui",
+  "name": "Zoltraak",
   "private": true,
   "scripts": {
     "build": "turbo run build",
