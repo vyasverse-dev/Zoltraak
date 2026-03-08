@@ -6,17 +6,23 @@
 
 [data-theme="zenith"] {
   /* Bright, neutral baseline */
-  --background: oklch(1 0 0);
+  --background: oklch(26.1% 0.08892 282.865);
   --color-background: var(--background);
+  
+  /* ADD THESE LINES FOR WHITE TEXT */
+  --foreground: oklch(0.985 0 0);
+  --color-foreground: var(--foreground);
+  --card-foreground: oklch(0.985 0 0);
+  --muted-foreground: oklch(0.708 0 0);
 
   /* Force a vivid primary to verify overrides */
-  --primary: #8b5cf6 !important;
+  --primary: #6f7bf8 !important;
   --color-primary: var(--primary);
 
-  --card: oklch(0.97 0 0);
+  --card: oklch(60.786% 0.17979 274.086);
   --color-card: var(--card);
 
-  --border: oklch(0.92 0 0);
+  --border: oklch(40.677% 0.24941 276.161);
   --color-border: var(--border);
 
   --radius: 0.625rem;
@@ -69,7 +75,7 @@
 [data-theme="anime"] {
   --background: oklch(0.99 0.03 93);
   --color-background: var(--background);
-  --primary: #ffb7c5;
+  --primary: #f25c7a;
   --color-primary: var(--primary);
   --card: oklch(0.985 0.06 70);
   --color-card: var(--card);
