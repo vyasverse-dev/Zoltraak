@@ -1,0 +1,107 @@
+/* Zoltraak Multiverse theme tokens
+ *
+ * Each data-theme variant overrides the core MonoLab design tokens.
+ * These values intentionally push contrast + mood so differences are obvious.
+ */
+
+[data-theme="zenith"] {
+  /* Bright, neutral baseline */
+  --background: oklch(1 0 0);
+  --color-background: var(--background);
+
+  /* Force a vivid primary to verify overrides */
+  --primary: #8b5cf6 !important;
+  --color-primary: var(--primary);
+
+  --card: oklch(0.97 0 0);
+  --color-card: var(--card);
+
+  --border: oklch(0.92 0 0);
+  --color-border: var(--border);
+
+  --radius: 0.625rem;
+
+  /* Convenience aliases for experiments */
+  --bg: var(--background);
+  --card-bg: var(--card);
+}
+
+[data-theme="cyberpunk"] {
+  /* Neon on deep space */
+  --background: #0f051d;
+  --color-background: var(--background);
+
+  --primary: oklch(0.7 0.25 325);
+  --color-primary: var(--primary);
+
+  --card: oklch(0.24 0.09 300);
+  --color-card: var(--card);
+
+  --border: oklch(0.4 0.12 290);
+  --color-border: var(--border);
+
+  --radius: 1rem;
+
+  --bg: var(--background);
+  --card-bg: var(--card);
+}
+
+[data-theme="medieval"] {
+  /* Warm parchment + steel */
+  --background: oklch(0.96 0.03 95);
+  --color-background: var(--background);
+
+  --primary: oklch(0.55 0.12 95);
+  --color-primary: var(--primary);
+
+  --card: oklch(0.9 0.04 80);
+  --color-card: var(--card);
+
+  --border: oklch(0.78 0.05 80);
+  --color-border: var(--border);
+
+  --radius: 0.5rem;
+
+  --bg: var(--background);
+  --card-bg: var(--card);
+}
+
+[data-theme="anime"] {
+  --background: oklch(0.99 0.03 93);
+  --color-background: var(--background);
+  --primary: #ffb7c5;
+  --color-primary: var(--primary);
+  --card: oklch(0.985 0.06 70);
+  --color-card: var(--card);
+  --border: oklch(0.9 0.04 80);
+  --color-border: var(--border);
+  --radius: 1.25rem;
+  --bg: var(--background);
+  --card-bg: var(--card);
+}
+
+[data-theme="anime"] .petal {
+  position: absolute;
+  top: -10%;
+  width: 10px;
+  height: 14px;
+  background: radial-gradient(circle at 30% 30%, #ffd5df 40%, #ffb7c5 60%, #ff8fa3 100%);
+  border-radius: 60% 40% 60% 40%;
+  opacity: 0.8;
+  transform: rotate(15deg);
+  animation-name: petal-fall, petal-sway;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+}
+
+@keyframes petal-fall {
+  0% { transform: translateY(-10%) rotate(0deg); }
+  100% { transform: translateY(120vh) rotate(180deg); }
+}
+
+@keyframes petal-sway {
+  0%, 100% { transform: translateX(0) rotate(15deg); }
+  50% { transform: translateX(20px) rotate(25deg); }
+}
+
+
